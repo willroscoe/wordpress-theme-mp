@@ -1,0 +1,93 @@
+/**
+ * 11.1 - Header
+ */
+
+.site-header {
+  margin: 0px;
+  width: 100%;
+  margin-top: 20px;
+  //position: relative;
+  //height: 50px;
+}
+
+.site-header-main {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.site-branding {
+  margin: 0.875em auto 0.875em 0;
+  /* Avoid overflowing wide custom logo in small screens in Firefox and IEs */
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.site-title {
+  display: block;
+  width: 80px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 0px 0px;
+  text-indent: -100000px;
+  background: url(img/mattering-press.png) no-repeat top left;
+  margin: 0px;
+  a {
+    display: block;
+  }
+}
+
+.site-branding .site-title a {
+  color: $link-color;
+  &:hover, &:focus {
+    color: $link-hover-color
+  }
+}
+
+.menu-toggle {
+  background-color: transparent;
+  border: 1px solid $gray1;
+  color: $black;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  margin: 1.076923077em 0;
+  padding: 0.769230769em;
+}
+
+.no-js .menu-toggle {
+  display: none;
+}
+
+.menu-toggle {
+  &:hover, &:focus {
+    background-color: transparent;
+    border-color: $blue1;
+    color: $blue1;
+  }
+  &.toggled-on {
+    background-color: $black;
+    border-color: $black;
+    color: $white;
+    &:hover, &:focus {
+      background-color: $black;
+      border-color: $black;
+      color: $white;
+    }
+  }
+  &:focus {
+    outline: 0;
+  }
+  &.toggled-on:focus {
+    outline: thin dotted;
+  }
+}
