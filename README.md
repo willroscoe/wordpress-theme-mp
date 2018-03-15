@@ -4,5 +4,5 @@
 
 Based on 'Twenty Sixteen' theme using sass.
 
-##Requirements
+## Requirements
 Wordpress version >= 4.4
