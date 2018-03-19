@@ -8,10 +8,10 @@
 
   body:not(.search-results) {
     .entry-summary {
-      font-size: 23px;
+      /*font-size: 23px;
       font-size: 1.4375rem;
       line-height: 1.5217391304;
-      margin-bottom: 1.826086957em;
+      margin-bottom: 1.826086957em;*/
     }
     .entry-header + .entry-summary {
       margin-top: -0.913043478em;
@@ -30,9 +30,9 @@
         > ol {
           margin-left: 1.52173913em;
         }
-        font-size: 23px;
+        /*font-size: 23px;
         font-size: 1.4375rem;
-        line-height: 1.5217391304;
+        line-height: 1.5217391304;*/
         margin: 0 0 1.5217391304em;
         padding-left: 1.347826087em;
         &:not(.alignleft):not(.alignright) {

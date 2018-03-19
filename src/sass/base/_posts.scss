@@ -2,7 +2,7 @@
  * 11.2 - Posts and pages
  */
 
-.site-main > article {
+ .site-main > article {
   margin-bottom: 3.5em;
   position: relative;
 }
@@ -13,16 +13,18 @@
 }
 
 .entry-title {
-  font-family: $font-family;
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-family: $font-family-title;
+  //font-size: 28px;
+  //font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
-  margin-bottom: 1em;
+  //margin-bottom: 1em;
+  margin-top: 0;
   a {
     color: $black;
     &:hover, &:focus {
-      color: $blue1;
+      color: $link-hover-color;
+      text-decoration: none;
     }
   }
 }
@@ -46,7 +48,7 @@ a.post-thumbnail {
 }
 
 .entry-content, .entry-summary {
-  border-color: $gray1;
+  border-color: $black;
 }
 
 /*.entry-content h1, .entry-summary h1, .comment-content h1, .textwidget h1 {
@@ -179,14 +181,14 @@ a.post-thumbnail {
 
 body:not(.search-results) {
   .entry-summary {
-    color: $gray2;
-    font-size: 19px;
+    color: $black;
+    /*font-size: 19px;
     font-size: 1.1875rem;
-    line-height: 1.4736842105;
+    line-height: 1.4736842105;*/
     margin-bottom: 1.4736842105em;
   }
   .entry-header + .entry-summary {
-    margin-top: -0.736842105em;
+    //margin-top: -0.736842105em;
   }
   .entry-summary {
     p, address, hr, ul, ol, dl, dd, table {
@@ -220,6 +222,11 @@ body:not(.search-results) {
       margin-bottom: 1.4736842105em;
     }
   }
+}
+
+.post-word-count {
+  margin: 0.5em 0;
+  color: $gray2;
 }
 
 .entry-content > :last-child, .entry-summary > :last-child, body:not(.search-results) .entry-summary > :last-child, .page-content > :last-child, .comment-content > :last-child, .textwidget > :last-child {
@@ -285,7 +292,7 @@ body:not(.search-results) {
   a {
     color: $gray2;
     &:hover, &:focus {
-      color: $blue1;
+      color: $link-hover-color;
     }
   }
   > span:not(:last-child):after {

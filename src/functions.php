@@ -371,3 +371,29 @@ function matteringpress_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'matteringpress_widget_tag_cloud_args' );
+
+function matteringpress_post_word_count($displayflag) {
+	$wpm = 275; // average words per minute reading
+	$word_count = str_word_count( strip_tags( get_post_field( 'post_content', get_the_ID() ) ) );
+	$readtime = roundUp($word_count / $wpm, 0.5);
+	if ($displayflag == 2) {
+		return sprintf(
+		__( '%s minute read', 'text-domain' ),
+		$readtime
+		);
+	} elseif ($displayflag == 3) {
+		return sprintf(
+		__( '%s words | %s minute read', 'text-domain' ),
+		$word_count, $readtime
+		);
+	} else {
+		return sprintf(
+		__( '%s words', 'text-domain' ),
+		$word_count
+		);
+	}
+ }
+
+ function roundUp($number, $nearest){
+    return $number + ($nearest - fmod($number, $nearest));
+}

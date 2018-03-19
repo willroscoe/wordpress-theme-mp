@@ -2,7 +2,7 @@
  * 10.0 - Widgets
  */
 
-.widget {
+ .widget {
   //border-top: 4px solid $black;
   //margin-bottom: 3.5em;
   //padding-top: 1.75em;
@@ -121,7 +121,7 @@
 
 .tagcloud {
   a {
-    border: 1px solid $gray1;
+    border: 1px solid $gray2;
     border-radius: 2px;
     display: inline-block;
     font-family: $font-family;
@@ -138,8 +138,8 @@
   }
   a {
     &:hover, &:focus {
-      border-color: $blue1;
-      color: $blue1;
+      border-color: $link-hover-color;
+      color: $link-hover-color;
       outline: 0;
     }
   }
