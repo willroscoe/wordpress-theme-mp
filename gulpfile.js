@@ -33,23 +33,23 @@ gulp.task('watch', function(){
 // copy all files to the local wordpress test site
 gulp.task('copycss', function () {
     gulp.src('./src/style.css')
-        .pipe(gulp.dest('../../../../../../Sites/wordpress/wp-content/themes/matteringpress/'));
+        .pipe(gulp.dest('../../../Sites/wordpress/wp-content/themes/matteringpress/'));
 });
 
 gulp.task('deletecss', function () {
     return del([
-        '../../../../../../Sites/wordpress/wp-content/themes/matteringpress/style.css'], {force:true}
+        '../../../Sites/wordpress/wp-content/themes/matteringpress/style.css'], {force:true}
     );
 });
 
 gulp.task('copyall', function () {
     gulp.src('./src/**/*')
-        .pipe(gulp.dest('../../../../../../Sites/wordpress/wp-content/themes/matteringpress/'));
+        .pipe(gulp.dest('../../../Sites/wordpress/wp-content/themes/matteringpress/'));
 });
 
 gulp.task('deleteall', function () {
     return del([
-        '../../../../../../Sites/wordpress/wp-content/themes/matteringpress/*'], {force:true}
+        '../../../Sites/wordpress/wp-content/themes/matteringpress/*'], {force:true}
     );
 });
 
