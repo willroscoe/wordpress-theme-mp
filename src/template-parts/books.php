@@ -23,19 +23,20 @@ $buy_book_link = get_post_meta( get_the_ID(), 'buy_book_link', true );
 
 // download links
 $downloadlinks = "";
-build_download_link("PDF", "PDF");
-build_download_link("ePub", "ePub");
-build_download_link("mobi", "Kindle (mobi)");
+$downloadlinks = build_download_link($downloadlinks, "pdf", "PDF");
+$downloadlinks = build_download_link($downloadlinks, "epub", "ePub");
+$downloadlinks = build_download_link($downloadlinks, "mobi", "Kindle (mobi)");
 
-function build_download_link($filetype, $filedesc)
+function build_download_link($downloadlinks, $filetype, $filedesc)
 {
 	$thefile = get_post_meta( get_the_ID(), $filetype . '_file_attachment', true );
 	if ($thefile != "") {
-		if ($GLOBALS["downloadlinks"] != "") {
-			$GLOBALS["downloadlinks"] .= ", ";
+		if ($downloadlinks != "") {
+			$downloadlinks .= ", ";
 		}
-		$GLOBALS["downloadlinks"] .= sprintf("<a href='%s'>" . $filedesc . "</a>", $thefile['url']);
+		$downloadlinks = sprintf("<a href='%s'>" . $filedesc . "</a>", $thefile['url']);
 	}
+	return $downloadlinks;
 }
 ?>
 
@@ -51,7 +52,7 @@ function build_download_link($filetype, $filedesc)
 		<?php matteringpress_post_thumbnail(); ?>
 		<ul class='link-block'>
 			<?php if ($epub_file_url != "") : ?>
-				<li><span class='label'>Read</span> <span class='links'><a href='/books/imagining-classrooms/read' class='colorbox donate' data-colorbox-href='#donate-popup' data-colorbox-inline='true'>online</a></a></li>
+				<li><span class='label'>Read</span> <span class='links'><a href='<?php echo esc_url( get_permalink() ) . "read"; ?>' class='colorbox donate' data-colorbox-href='#donate-popup' data-colorbox-inline='true'>online</a></a></li>
 			<?php endif; ?>
 
 			<?php if ($downloadlinks != "") : ?>
@@ -63,15 +64,6 @@ function build_download_link($filetype, $filedesc)
 			<?php endif; ?>
 		</ul>
 	</div>
-
-	
-	
-	<?php
-		
-	?>
-	<?php if ($downloadlinks != "") { ?>
-	<p>Download: <?php echo $downloadlinks ;?></p>
-	<?php } ?>
 
 	<?php the_excerpt(); ?>
 
