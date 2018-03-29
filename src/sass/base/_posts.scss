@@ -2,7 +2,7 @@
  * 11.2 - Posts and pages
  */
 
- .site-main > article {
+ .site-main > article:not(.book-list-view) {
   margin-bottom: 3.5em;
   position: relative;
 }
@@ -14,11 +14,8 @@
 
 .entry-title {
   font-family: $font-family-title;
-  //font-size: 28px;
-  //font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
-  //margin-bottom: 1em;
   margin-top: 0;
   a {
     color: $black;
@@ -31,7 +28,7 @@
 
 .post-thumbnail {
   display: block;
-  margin: 0 7.6923% 1.75em;
+  margin: 0 7.6923% 1.75em 0;
   img {
     display: block;
   }
@@ -235,6 +232,13 @@ body:not(.search-results) {
 
 .more-link {
   white-space: nowrap;
+  float: right;
+  display: block;
+  margin: 20px 0;
+}
+
+a.more-link {
+  text-decoration: underline;
 }
 
 .author-info {

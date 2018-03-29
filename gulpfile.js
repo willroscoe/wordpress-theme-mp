@@ -67,4 +67,4 @@ gulp.task('default', ['watch']);
 
 gulp.task('cssc', ['css', 'deletecss', 'copycss']);
 
-gulp.task('syncall', ['deleteall', 'copyall']);
+gulp.task('syncall', ['css', 'deleteall', 'copyall']);

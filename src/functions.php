@@ -372,6 +372,7 @@ function matteringpress_widget_tag_cloud_args( $args ) {
 }
 add_filter( 'widget_tag_cloud_args', 'matteringpress_widget_tag_cloud_args' );
 
+// for blog posts
 function matteringpress_post_word_count($displayflag) {
 	$wpm = 275; // average words per minute reading
 	$word_count = str_word_count( strip_tags( get_post_field( 'post_content', get_the_ID() ) ) );
@@ -394,6 +395,26 @@ function matteringpress_post_word_count($displayflag) {
 	}
  }
 
- function roundUp($number, $nearest){
+function roundUp($number, $nearest){
     return $number + ($nearest - fmod($number, $nearest));
 }
+
+// build download links for book pages
+function build_download_link($downloadlinks, $filetype, $filedesc)
+{
+	$thefile = get_post_meta( get_the_ID(), $filetype . '_file_attachment', true );
+	if ($thefile != "") {
+		if ($downloadlinks != "") {
+			$downloadlinks .= ", ";
+		}
+		$downloadlinks .= sprintf("<a href='%s'>" . $filedesc . "</a>", $thefile['url']);
+	}
+	return $downloadlinks;
+}
+
+// Replaces the excerpt "Read More" text by a link
+function new_excerpt_more($more) {
+	global $post;
+ 	return '<a class="more-link" href="'. get_permalink($post->ID) . '">Read more</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

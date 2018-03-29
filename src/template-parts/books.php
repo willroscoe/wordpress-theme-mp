@@ -7,8 +7,11 @@
  * @since Mattering Press 1.0
  */
 ?>
-
 <?php
+// sub-title
+$book_subtitle = get_post_meta(get_the_ID(), "book_subtitle", true);
+// authors
+$book_authors = get_post_meta(get_the_ID(), "book_authors", true);
 // read online
 $epub_file_url = "";
 $enable_readonline = get_post_meta( get_the_ID(), 'enable_readonline', true );
@@ -26,27 +29,16 @@ $downloadlinks = "";
 $downloadlinks = build_download_link($downloadlinks, "pdf", "PDF");
 $downloadlinks = build_download_link($downloadlinks, "epub", "ePub");
 $downloadlinks = build_download_link($downloadlinks, "mobi", "Kindle (mobi)");
-
-function build_download_link($downloadlinks, $filetype, $filedesc)
-{
-	$thefile = get_post_meta( get_the_ID(), $filetype . '_file_attachment', true );
-	if ($thefile != "") {
-		if ($downloadlinks != "") {
-			$downloadlinks .= ", ";
-		}
-		$downloadlinks = sprintf("<a href='%s'>" . $filedesc . "</a>", $thefile['url']);
-	}
-	return $downloadlinks;
-}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="book-<?php the_ID(); ?>" <?php post_class('book-list-view'); ?>>
 	<header class="entry-header">
-		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-			<span class="sticky-post"><?php _e( 'Featured', 'matteringpress' ); ?></span>
-		<?php endif; ?>
-
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+		<?php if ($book_subtitle != "") { echo sprintf( '<h3 class="book-subtitle">%s</h3>', $book_subtitle ); } ?>
+
+		<?php if ($book_authors != "") { echo sprintf( '<h4 class="book-authors">%s</h4>', $book_authors ); } ?>
+
 	</header><!-- .entry-header -->
 	<div class='book-list-view-body'>
 		<?php matteringpress_post_thumbnail(); ?>
@@ -64,8 +56,9 @@ function build_download_link($downloadlinks, $filetype, $filedesc)
 			<?php endif; ?>
 		</ul>
 	</div>
-
-	<?php the_excerpt(); ?>
+	<div class="book-item-body">
+		<?php the_excerpt(); ?>
+	</div>
 
 	<footer class="entry-footer">
 		<?php matteringpress_entry_meta(); ?>
