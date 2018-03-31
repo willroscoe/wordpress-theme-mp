@@ -30,14 +30,17 @@
     margin: 0;
   }
   li {
+    padding: 0.3em 0.25em;
+    width: 100%;
+    margin: 0;
     border-top: 1px solid $gray1;
     position: relative;
-    display: inline;
+    display: block;
   }
   a {
     color: $link-color;
     display: block;
-    text-align: center;
+    text-align: left;
     line-height: 2;
     padding: 0;
     &:hover, &:focus {
@@ -45,7 +48,7 @@
     }
   }
   .current-menu-item > a, .current-menu-ancestor > a {
-    //font-weight: 700;
+    font-weight: 700;
   }
   ul ul {
     display: none;

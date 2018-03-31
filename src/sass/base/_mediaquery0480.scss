@@ -34,6 +34,7 @@
 
       .site-title {
         background-position : bottom left;
+        top:0px;
       }
 
       .site-header-menu {
@@ -48,7 +49,7 @@
       }
     
       .main-navigation {
-        margin: 0 -0.875em;
+        margin: 0;
         .primary-menu {
           border: 0;
           > li {
@@ -59,13 +60,21 @@
         a {
           //outline-offset: -8px;
           //padding: 0.65625em 0.875em;
-          padding: 0 0.875em;
+          line-height: 1em;
+          text-align: center;
+          //padding: 0 0.65em 0 0;
           white-space: nowrap;
         }
         li {
+          display: inline;
+          width: auto;
+          padding: 0 0.65em 0;
           &:hover > a, &.focus > a {
             color: $link-hover-color;
           }
+        }
+        li:first-child {
+          padding: 0 0.65em 0 0;
         }
         ul ul {
           border-bottom: 1px solid $gray1;
