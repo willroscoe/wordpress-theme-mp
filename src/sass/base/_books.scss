@@ -72,6 +72,30 @@
     }
 }
 
+.book-sidebar {
+    ul.link-block {
+        padding: 0px;
+        margin: 30px 0px;
+        list-style-type: none;
+        font-size: 80%;
+    }
+
+    ul.link-block li {
+        padding: 0px;
+        margin: 2px 0px;
+    }
+
+    ul.link-block li .label {
+        color: $dark-gray;
+    }
+
+    ul.link-block li .links a {
+        text-decoration: none;
+        background-image: none;
+        padding: 0px;
+    }
+}
+
 .book-item-body {
     display: block;
     clear: both;

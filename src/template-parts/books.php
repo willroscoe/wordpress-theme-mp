@@ -8,27 +8,11 @@
  */
 ?>
 <?php
-// sub-title
-$book_subtitle = get_post_meta(get_the_ID(), "book_subtitle", true);
-// authors
-$book_authors = get_post_meta(get_the_ID(), "book_authors", true);
-// read online
-$epub_file_url = "";
-$enable_readonline = get_post_meta( get_the_ID(), 'enable_readonline', true );
-$epub_file_attachment = get_post_meta( get_the_ID(), 'epub_file_attachment', true );
-if ($epub_file_attachment != "" and $enable_readonline == TRUE)
-{
-	$epub_file_url = $epub_file_attachment['url'];
-}
-
-// buy online
-$buy_book_link = get_post_meta( get_the_ID(), 'buy_book_link', true );
-
-// download links
-$downloadlinks = "";
-$downloadlinks = build_download_link($downloadlinks, "pdf", "PDF");
-$downloadlinks = build_download_link($downloadlinks, "epub", "ePub");
-$downloadlinks = build_download_link($downloadlinks, "mobi", "Kindle (mobi)");
+$book_subtitle = get_book_subtitle();
+$book_authors = get_book_authors();
+$epub_file_url = get_epub_file_url();
+$buy_book_link = get_buy_book_link();
+$downloadlinks = get_download_links();
 ?>
 
 <article id="book-<?php the_ID(); ?>" <?php post_class('book-list-view'); ?>>

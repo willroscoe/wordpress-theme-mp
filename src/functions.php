@@ -399,19 +399,6 @@ function roundUp($number, $nearest){
     return $number + ($nearest - fmod($number, $nearest));
 }
 
-// build download links for book pages
-function build_download_link($downloadlinks, $filetype, $filedesc)
-{
-	$thefile = get_post_meta( get_the_ID(), $filetype . '_file_attachment', true );
-	if ($thefile != "") {
-		if ($downloadlinks != "") {
-			$downloadlinks .= ", ";
-		}
-		$downloadlinks .= sprintf("<a href='%s'>" . $filedesc . "</a>", $thefile['url']);
-	}
-	return $downloadlinks;
-}
-
 // Replaces the excerpt "Read More" text by a link
 function new_excerpt_more($more) {
 	global $post;
