@@ -31,7 +31,7 @@ $epub_file_url = get_epub_file_url();
 		) );
 		?>
 		<?php if ($epub_file_url != "") { ?>
-		<p style="text-align: right;"><a href="<?php echo esc_url( get_permalink() ) . "read"; ?>" class="button button-blue" style="color:white; text-decoration:none;">Read online »</a></p>
+		<p style="text-align: right;"><a href="<?php echo esc_url( get_permalink() ) . "/read"; ?>" class="button button-blue" style="color:white; text-decoration:none;">Read online »</a></p>
 		<?php } ?>
 	</div><!-- .entry-content -->	
 	<?php

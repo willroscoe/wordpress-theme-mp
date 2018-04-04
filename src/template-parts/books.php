@@ -28,7 +28,7 @@ $downloadlinks = get_download_links();
 		<?php matteringpress_post_thumbnail(); ?>
 		<ul class='link-block'>
 			<?php if ($epub_file_url != "") : ?>
-				<li><span class='label'>Read</span> <span class='links'><a href='<?php echo esc_url( get_permalink() ) . "read"; ?>' class='colorbox donate' data-colorbox-href='#donate-popup' data-colorbox-inline='true'>online</a></a></li>
+				<li><span class='label'>Read</span> <span class='links'><a href='<?php echo esc_url( get_permalink() ) . "/read"; ?>' class='colorbox donate' data-colorbox-href='#donate-popup' data-colorbox-inline='true'>online</a></a></li>
 			<?php endif; ?>
 
 			<?php if ($downloadlinks != "") : ?>
