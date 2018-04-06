@@ -4,8 +4,12 @@
 
  .widget {
   //border-top: 4px solid $black;
-  //margin-bottom: 3.5em;
+  margin-bottom: 3.5em;
   //padding-top: 1.75em;
+}
+
+.widget_wr_book_cms_page_title_widget {
+  margin-bottom: 0;
 }
 
 .widget-area > :last-child {
@@ -45,6 +49,11 @@
   ul {
     list-style: none;
     margin: 0;
+  }
+}
+.widget_subpages {
+  ul {
+    margin-top:40px;
   }
 }
 
@@ -121,11 +130,13 @@
 
 .tagcloud {
   a {
-    border: 1px solid $gray2;
-    border-radius: 2px;
+    border-radius: 4px;
+    background-color: #eee;
+    color: #333;
     display: inline-block;
     font-family: $font-family;
     line-height: 1;
+    text-decoration: none;
     margin: 0 0.1875em 0.4375em 0;
     padding: 0.5625em 0.4375em 0.5em;
   }
@@ -138,9 +149,10 @@
   }
   a {
     &:hover, &:focus {
-      border-color: $link-hover-color;
-      color: $link-hover-color;
+      color: #333;
+      background-color: #ccc;
       outline: 0;
+      text-decoration: none;
     }
   }
 }
