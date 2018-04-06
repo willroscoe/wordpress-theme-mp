@@ -144,3 +144,100 @@
         margin: 10px 0 1em;
     }
 }
+
+.book-navigation {
+    overflow: hidden;
+    padding: 40px 0px 0px;
+  }
+  .book-navigation .book-prev {
+    float: left;
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px; /* for when both titles are very long */
+  }
+  .book-navigation .book-next {
+    float: right;
+    position: relative;
+    padding-right: 20px;
+    margin-bottom: 20px; /* for when both titles are very long */
+    text-align: right;
+  }
+  
+  .book-navigation .book-prev:before,
+  .book-navigation .book-next:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    font-size: 120%;
+    color: #aaa;
+    margin-top: 1px;
+    text-decoration: none;
+    position: absolute;
+  }
+  
+  .book-navigation .book-prev:before {
+    content: "\e801";
+    left: 0px;
+  }
+  .book-navigation .book-next:before {
+    content: "\e800";
+    right: 0px;
+  }
+  
+  
+  ul.book-toc {
+    list-style-type:none;
+    padding: 20px 0px 0px;
+    margin: 0px;
+  }
+  ul.book-toc li {
+    padding: 20px 0px;
+    position: relative;
+  }
+  ul.book-toc li:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 90%;
+    height: 1px;
+    background-color: #ccc;
+  }
+  ul.book-toc li * {
+    display: block;
+  }
+  ul.book-toc li.current {
+    font-weight: bold;
+  }
+  ul.book-toc.level-2,
+  ul.book-toc.level-3,
+  ul.book-toc.level-4,
+  ul.book-toc.level-5 {
+    margin-bottom: -20px;
+  }
+  ul.book-toc.level-2 > li {
+    padding-left: 40px;
+    margin-left: 0px;
+  }
+  ul.book-toc.level-2 li a:before {
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: inherit;
+    content: "\e802";
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 3px;
+    font-size: 80%;
+    color: #aaa;
+    text-decoration: none;
+  }
+  ul.book-toc.level-3 > li {
+    padding-left: 60px;
+    margin-left: -40px;
+    padding-right: 40px;
+  }
