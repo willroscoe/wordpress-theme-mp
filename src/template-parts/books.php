@@ -10,9 +10,6 @@
 <?php
 $book_subtitle = get_book_subtitle();
 $book_authors = get_book_authors();
-$epub_file_url = get_epub_file_url();
-$buy_book_link = get_buy_book_link();
-$downloadlinks = get_download_links();
 ?>
 
 <article id="book-<?php the_ID(); ?>" <?php post_class('book-list-view'); ?>>
@@ -26,19 +23,9 @@ $downloadlinks = get_download_links();
 	</header><!-- .entry-header -->
 	<div class='book-list-view-body'>
 		<?php matteringpress_post_thumbnail(); ?>
-		<ul class='link-block'>
-			<?php if ($epub_file_url != "") : ?>
-				<li><span class='label'>Read</span> <span class='links'><a href='<?php echo esc_url( get_permalink() ) . "/read"; ?>' class='colorbox donate' data-colorbox-href='#donate-popup' data-colorbox-inline='true'>online</a></a></li>
-			<?php endif; ?>
 
-			<?php if ($downloadlinks != "") : ?>
-				<li><span class='label'>Download</span> <span class='links'><?php echo $downloadlinks ?></span></li>
-			<?php endif; ?>
+		<?php get_book_links_block(); ?>
 
-			<?php if ($buy_book_link != "") : ?>
-				<li><span class='label'>Buy</span> <span class='links'><a href='<?php echo $buy_book_link ?>'>Paperback</a></a></li>
-			<?php endif; ?>
-		</ul>
 	</div>
 	<div class="book-item-body">
 		<?php the_excerpt(); ?>

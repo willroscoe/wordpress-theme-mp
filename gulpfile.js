@@ -1,9 +1,11 @@
 'use strict';
 
-var gulp         = require('gulp'),
-    cssnano      = require('gulp-cssnano'),
-    sass         = require('gulp-sass'),
-    del          = require('del');
+var gulp    = require('gulp'),
+    cssnano = require('gulp-cssnano'),
+    sass    = require('gulp-sass'),
+    del     = require('del'),
+    concat  = require('gulp-concat'),
+    uglify = require('gulp-uglify');
     //syncy        = require('syncy');
 
 
@@ -24,6 +26,13 @@ gulp.task('css', function(){
         }))
         .pipe(gulp.dest('./src/'));
 });
+
+gulp.task('scripts', function() {
+    gulp.src(['src/js/libs/jquery.cookie.js', 'src/js/libs/colorbox.js', 'src/js/libs/main.js'])
+      .pipe(concat('mattering.min.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest('./src/js/'))
+  });
 
 gulp.task('watch', function(){
     gulp.watch('src/sass/**/*.scss', ['css', 'copycss']);
@@ -67,4 +76,4 @@ gulp.task('default', ['watch']);
 
 gulp.task('cssc', ['css', 'deletecss', 'copycss']);
 
-gulp.task('syncall', ['css', 'deleteall', 'copyall']);
+gulp.task('syncall', ['css', 'scripts', 'deleteall', 'copyall']);

@@ -34,6 +34,19 @@
   }
 }
 
+.post {
+  .post-thumbnail {
+    display: block;
+    margin: 0 7.6923% 0 0;
+    img {
+      width: 200px;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 10px; 
+    }
+  }
+}
+
 .no-sidebar .post-thumbnail img {
   margin: 0 auto;
 }

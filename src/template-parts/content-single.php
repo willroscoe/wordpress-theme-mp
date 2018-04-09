@@ -13,10 +13,8 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
-	<?php matteringpress_excerpt(); ?>
-
 	<?php matteringpress_post_thumbnail(); ?>
-
+	<?php matteringpress_excerpt(); ?>
 	<div class="entry-content">
 		<?php
 			the_content();

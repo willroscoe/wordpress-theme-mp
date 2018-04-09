@@ -18,9 +18,10 @@
 	</header><!-- .entry-header -->
 
 	<p class="post-word-count"><?php echo matteringpress_post_word_count(3); ?></p>
-	<?php the_excerpt(); ?>
 
 	<?php matteringpress_post_thumbnail(); ?>
+	
+	<?php the_excerpt(); ?>
 
 	<footer class="entry-footer">
 		<?php matteringpress_entry_meta(); ?>

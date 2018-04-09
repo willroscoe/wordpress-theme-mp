@@ -1,4 +1,4 @@
-$(function () {
+(function ($) {
     var cookie_name = "mattering_donate_action";
     var cookie_name_skip_count = "mattering_donate_skip_count";
   
@@ -117,4 +117,4 @@ $(function () {
     colorbox('.colorbox');
     donations('#donate-popup');
     downloadTracking();
-  });
+  })(jQuery);

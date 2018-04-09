@@ -6,12 +6,6 @@
 #mc_embed_signup form { padding:0px; margin:20px 0px 0px; }
 #mc_embed_signup .disclaimer { font-size:80%; color:#888; font-style: italic; clear: both; }
 
-
-#donate-popup
-
-
-
-
 /*
     ColorBox Core Style:
     The following CSS is consistent between example themes and should not be altered.
@@ -57,7 +51,7 @@
 #cboxNext:hover{background-position:-50px -25px;}
 #cboxLoadingOverlay{background:url(img/colorbox/loading_background.png) no-repeat center center;}
 #cboxLoadingGraphic{background:url(img/colorbox/loading.gif) no-repeat center center;}
-#cboxClose{position:absolute; top:0; right:0; background:url(img/colorbox/controls.png) no-repeat -25px 0; width:25px; height:25px; text-indent:-9999px;}
+#cboxClose{position:absolute; top:0; right:0; background:url(img/colorbox/controls.png) no-repeat -25px 0; width:24px; height:0; text-indent:-9999px;}
 #cboxClose:hover{background-position:-25px -25px;}
 
 /*

@@ -219,9 +219,10 @@ function matteringpress_scripts() {
 
 	wp_enqueue_script( 'matteringpress-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160816', true );
 
-	wp_enqueue_script( 'matteringpress-colorbox', get_template_directory_uri() . '/js/colorbox.js', array( 'jquery' ), '20160816', true );
-	wp_enqueue_script( 'matteringpress-main', get_template_directory_uri() . '/js/mattering.js', array( 'jquery' ), '20160816', true );
-
+	if (!is_admin()) {
+		//wp_enqueue_script( 'matteringpress-colorbox', get_template_directory_uri() . '/js/colorbox.js', array( 'jquery' ), '20160816', false );
+		wp_enqueue_script( 'matteringpress-main', get_template_directory_uri() . '/js/mattering.min.js', array( 'jquery' ), '20160816', true );
+	}
 	wp_localize_script( 'matteringpress-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'matteringpress' ),
 		'collapse' => __( 'collapse child menu', 'matteringpress' ),
