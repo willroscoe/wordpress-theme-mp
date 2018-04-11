@@ -14,12 +14,15 @@
 <aside id="book-sidebar" class="sidebar widget-area book-sidebar" role="complementary">
 	<section id="subpages-widget-2" class="widget widget_subpages">
 		<!--<h2 class="widget-title">
-			<?php the_title(); ?>
+			<?php //the_title(); ?>
 		</h2>
-		<h3><?php echo $book_subtitle; ?></h3>
-		<h4><?php echo $book_authors; ?></h4>-->
+		<h3><?php //echo $book_subtitle; ?></h3>
+		<h4><?php //echo $book_authors; ?></h4>-->
 	
 		<?php matteringpress_post_thumbnail(); ?>
+
+		<h3 class="book-subtitle"><?php echo get_book_subtitle(); ?></h3>
+		<h4 class="book-authors"><?php echo get_book_authors(); ?></h4>
 		
 		<?php get_book_links_block(); ?>
 

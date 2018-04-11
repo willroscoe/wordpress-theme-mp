@@ -12,10 +12,10 @@ $epub_file_url = get_epub_file_url();
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="book-title book-page">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-	<div><?php echo get_book_subtitle(); ?></div>
-	<div><?php echo get_book_authors(); ?></div>
+	<!--<h3 class="book-subtitle"><?php //echo get_book_subtitle(); ?></h3>
+	<h4 class="book-authors"><?php //echo get_book_authors(); ?></h4>-->
 
 	<div class="entry-content">
 		<?php

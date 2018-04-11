@@ -28,21 +28,8 @@
         }
     }
 
-    h2 {
-        font-size: 2em;
-    }
-
     .entry-header {
         margin-bottom: 30px;
-    }
-
-    h3, h4 {
-        font-family: $font-family-title;
-        padding: 0;
-        margin: 0px !important;
-        font-weight: normal;
-        color: $light-gray;
-        font-size: 1em;
     }
 
     .book-list-view-body > * {
@@ -70,6 +57,36 @@
         background-image: none;
         padding: 0px;
     }
+}
+
+.book-title {
+    font-size: 2em;
+    font-family: $font-family-title;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 0.1em;
+    a {
+        color: $black;
+        &:hover, &:focus {
+        color: $link-hover-color;
+        text-decoration: none;
+        }
+    }
+}
+
+.book-page {
+    margin: 0 0 1em;
+}
+
+.book-subtitle, .book-authors {
+    
+        font-family: $font-family-title;
+        padding: 0;
+        margin: 0px !important;
+        font-weight: normal;
+        color: $light-gray;
+        font-size: 1em;
+    
 }
 
 .book-sidebar {

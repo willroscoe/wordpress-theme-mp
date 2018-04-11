@@ -14,7 +14,7 @@ $book_authors = get_book_authors();
 
 <article id="book-<?php the_ID(); ?>" <?php post_class('book-list-view'); ?>>
 	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="book-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
 		<?php if ($book_subtitle != "") { echo sprintf( '<h3 class="book-subtitle">%s</h3>', $book_subtitle ); } ?>
 
