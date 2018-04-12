@@ -8,7 +8,7 @@
   //padding-top: 1.75em;
 }
 
-.widget_wr_book_cms_page_title_widget {
+.widget_mp_book_cms_page_title_widget {
   margin-bottom: 0;
 }
 
@@ -52,8 +52,12 @@
   }
 }
 .widget_subpages {
-  ul {
+  ul{
     margin-top:40px;
+
+    ul {
+      margin-top:0;
+    }
   }
 }
 
@@ -154,5 +158,25 @@
       outline: 0;
       text-decoration: none;
     }
+  }
+}
+
+.widget_subpages {
+  .widget_subpages_current_page > a {
+      font-weight: 700;
+  }
+  ul {
+    ul {
+      margin-left: 20px;
+      ul {
+        //margin-left: 30px;
+      }
+    }
+  }
+  .widget_subpages_current_page {
+    a[href$='thank-you'] {
+      display: none;
+    }
+    
   }
 }

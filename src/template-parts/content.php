@@ -17,8 +17,10 @@
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
-	<p class="post-word-count"><?php echo matteringpress_post_word_count(3); ?></p>
-
+	<?php if (get_post_type() == 'post') { ?>
+		<p class="post-word-count"><?php echo matteringpress_post_word_count(3); ?></p>
+	<?php } ?>
+	
 	<?php matteringpress_post_thumbnail(); ?>
 	
 	<?php the_excerpt(); ?>
