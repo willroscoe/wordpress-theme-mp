@@ -29,4 +29,32 @@
   > :last-child {
     margin-bottom: 0;
   }
+
+  a[href^="http"] {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHBJREFUeNpi/P//PwMuwMjICJdkYsAPzIH4NRD/AnH2AvF/JHwSaosZED8HYg+oOJhwAknCMJIiJyQxEI2h6AkQ26CJYyhcDcSWUPZhmDgjVCEjLl/D5Aj5mgEleIA6PbCYhiG2HS14kPF2mBsBAgwAHnpgZQ8cT2MAAAAASUVORK5CYII=");
+    background-position: center right;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+
+    target:new front;
+    target-name: new; target-new: tab;
+  }
+
+  /*a[href^="http://mattering"], a[href^="https://mattering"], a[href^="http://www.mattering"], a[href^="https://www.mattering"] {
+    background-image: none;
+    background-repeat: no-repeat;
+    padding-right: 0;
+  }*/
+
+  a[href*="matteringpress.org"], a[href*="wp.local"] {
+    background-image: none;
+    background-repeat: no-repeat;
+    padding-right: 0;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  
 }

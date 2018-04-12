@@ -28,7 +28,7 @@ $book_authors = get_book_authors();
 
 	</div>
 	<div class="book-item-body">
-		<?php the_excerpt(); ?>
+		<?php the_excerpt(); ?>...
 	</div>
 
 	<footer class="entry-footer">
