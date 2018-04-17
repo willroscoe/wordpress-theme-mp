@@ -17,6 +17,7 @@
   font-weight: 700;
   line-height: 1.25;
   margin-top: 0;
+  margin-bottom: 10px;
   a {
     color: $black;
     &:hover, &:focus {
@@ -451,3 +452,67 @@ body {
     margin-bottom: 3.5em;
   }
 }
+
+.entry-main-content {
+  img {
+    max-width: 140px;
+    margin: 0 20px 15px 0;
+  }
+  .post-thumbnail {
+    display: inline;
+    float: left;
+    margin-bottom: 0.75em
+  }
+}
+
+ul.display-posts-listing {
+  margin: 0;
+}
+
+.display-posts-listing {
+
+  hr {
+    margin-bottom: 2em !important;
+  }
+  
+  p {
+    display: block;  
+  }
+
+  article {
+    margin: 20px 0 20px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .entry-footer {
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+      border-bottom: $gray-line;
+    }
+    &:first-child {
+      //margin-top: 0;
+    }
+    &:last-child {
+      //padding-bottom: 0;
+      &:after {
+      //display: none;
+      }
+    }
+  }
+
+  article:last-child {
+    .entry-footer {
+      &:after {
+        display: none;
+        }
+    }
+  }
+
+}
+
+

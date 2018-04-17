@@ -7,7 +7,6 @@
  * @since Mattering Press 1.0
  */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -20,10 +19,11 @@
 	<?php if (get_post_type() == 'post') { ?>
 		<p class="post-word-count"><?php echo matteringpress_post_word_count(3); ?></p>
 	<?php } ?>
-	
+	<div class="entry-main-content">
 	<?php matteringpress_post_thumbnail(); ?>
 	
 	<?php the_excerpt(); ?>
+	</div>
 
 	<footer class="entry-footer">
 		<?php matteringpress_entry_meta(); ?>
