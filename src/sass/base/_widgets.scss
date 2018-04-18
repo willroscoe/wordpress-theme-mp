@@ -4,12 +4,25 @@
 
  .widget {
   //border-top: 4px solid $black;
-  margin-bottom: 3.5em;
+  margin-bottom: 2.5em;
   //padding-top: 1.75em;
 }
 
 .widget_mp_book_cms_page_title_widget {
   margin-bottom: 0;
+}
+
+.widget_mp_book_blog_post_meta_data_widget {
+  font-family: $font-family-title;
+  .entry-date {
+    font-weight: bold;
+  }
+}
+.widget-post-authors-container {
+  margin: 0.5em 0 1.5em;
+  .widget-post-authors {
+    font-weight: bold;
+  }
 }
 
 .widget-area > :last-child {
