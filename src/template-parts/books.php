@@ -22,7 +22,7 @@ $book_authors = get_book_authors();
 
 	</header><!-- .entry-header -->
 	<div class='book-list-view-body'>
-		<?php matteringpress_post_thumbnail(); ?>
+		<?php matteringpress_post_thumbnail("book-thumbnail"); ?>
 
 		<?php get_book_links_block(); ?>
 

@@ -121,8 +121,16 @@
     margin-top: 10px;
 }
 
-.book-list-view-body img {
-    width: 200px;
+.book-list-view-body {
+    .book-thumbnail {
+        display: inline;
+        float: left;
+        margin-bottom: 0.75em;
+        img {
+            width: 200px;
+        }
+    }
+    
 }
 
 .widget-book {
