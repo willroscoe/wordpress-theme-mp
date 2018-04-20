@@ -420,9 +420,15 @@ function matteringpress_entry_meta() {
 		if (function_exists('coauthors'))
 		{
 			echo '<span class="byline"><span class="author vcard">';
-			echo get_avatar('mp@matteringpress.org', $author_avatar_size );
+			$allauthors = get_coauthors();
+            if (count($allauthors) > 1) {
+                echo get_avatar('mp@matteringpress.org', $author_avatar_size );
+            }
+            elseif (count($allauthors) == 1) {
+                echo get_avatar($allauthors[0]->user_email, $author_avatar_size );
+            }
 			printf('<span class="screen-reader-text">%1$s </span>', _x( 'Author', 'Used before post author name.', 'matteringpress' ));
-			coauthors();
+			coauthors_posts_links();
 			echo '</span></span>';
 
 		}
@@ -450,6 +456,7 @@ function matteringpress_entry_meta() {
 		);
 	}
 
+	
 	if ( 'post' === get_post_type() ) {
 		matteringpress_entry_taxonomies();
 	}
@@ -481,5 +488,15 @@ function matteringpress_entry_date_no_link() {
 		_x( 'Posted on', 'Used before publish date.', 'matteringpress' ),
 		$time_string
 	);
+}
+
+function matteringpress_entry_taxonomies() {
+	$tags_list = get_the_tag_list( '', _x( ', ', 'Used between list items, there is a space after the comma.', 'matteringpress' ) );
+	if ( $tags_list && ! is_wp_error( $tags_list ) ) {
+		printf( '<span class="tags-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
+			_x( 'Tags', 'Used before tag names.', 'matteringpress' ),
+			$tags_list
+		);
+	}
 }
 
