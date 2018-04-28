@@ -2,10 +2,6 @@
  * 11.2 - Posts and pages
  */
 
- .site-main > article:not(.book-list-view) {
-  margin-bottom: 3.5em;
-  position: relative;
-}
 
 .entry-header, .entry-summary, .entry-content, .entry-footer, .page-content {
   margin-right: 7.6923%;
@@ -479,13 +475,10 @@ ul.display-posts-listing {
     display: block;  
   }
 
-  article {
-    margin: 20px 0 20px;
-    display: inline-block;
-    position: relative;
+  
   }
 
-  .entry-footer {
+  /*.entry-footer {
     &:after {
       content: "";
       display: block;
@@ -503,16 +496,54 @@ ul.display-posts-listing {
       //display: none;
       }
     }
+  }*/
+
+.site-main article {
+  margin: 20px 0 20px;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 40px;
+  &:first-child {
+    margin: 0 0 20px;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    border-bottom: $gray-line;
   }
 
-  article:last-child {
-    .entry-footer {
-      &:after {
-        display: none;
-        }
+  &:last-child::after {
+      display: none;
+  }
+
+  &:only-child {
+    &::after {
+      display: none;
     }
+    margin-bottom: 0;
+    padding-bottom: 0;
+    position: relative;
   }
+  
+  /*.site-main > article:not(.book-list-view) {
+    margin-bottom: 3.5em;
+    position: relative;
+  }*/
 
+}
+
+body.single article {
+  &::after {
+    display: none;
+  }
+}
+
+// override recent posts plugin to make li bottom margin smaller
+.rpwwt-widget ul li {
+  margin: 0 0 0.8em !important;
 }
 
 
