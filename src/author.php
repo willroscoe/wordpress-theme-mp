@@ -74,5 +74,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+get_sidebar('authors');
 get_footer();

@@ -6,6 +6,11 @@
   //border-top: 4px solid $black;
   margin-bottom: 2.5em;
   //padding-top: 1.75em;
+  ul {
+    li {
+      margin: 0 0 0.8em !important;
+    }
+  }
 }
 
 .widget_mp_book_cms_page_title_widget {
@@ -67,7 +72,7 @@
 .widget_subpages {
   ul{
     margin-top:40px;
-
+    
     ul {
       margin-top:0;
     }
