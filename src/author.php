@@ -9,12 +9,19 @@
  * @since Mattering Press 1.0
  */
 
-get_header(); ?>
+$authorname = $wp_query->get('author_name');
 
+// restrict posts to only include 'blog' ('making') category posts
+$wp_query = null;
+$wp_query = new WP_Query( array( 'category_name' => 'blog', 'author_name' => $authorname ) );
+
+get_header();
+
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php if ( have_posts() ) : ?>
+			<?php if ( $wp_query->have_posts() ) : ?>
 
 			<header class="archive-header">
 				<h1 class="archive-title">
@@ -26,7 +33,7 @@ get_header(); ?>
 						 * We reset this later so we can run the loop properly
 						 * with a call to rewind_posts().
 						 */
-						the_post();
+						$wp_query->the_post();
 
 						printf( __( 'All posts by %s', 'matteringpress' ), get_the_author() );
 					?>
@@ -35,17 +42,16 @@ get_header(); ?>
 				<div class="author-description"><?php the_author_meta( 'description' ); ?></div>
 				<?php endif; ?>
 			</header><!-- .archive-header -->
-
 			<?php
 					/*
 					 * Since we called the_post() above, we need to rewind
 					 * the loop back to the beginning that way we can run
 					 * the loop properly, in full.
 					 */
-					rewind_posts();
+					$wp_query->rewind_posts();
 
 					// Start the Loop.
-					while ( have_posts() ) : the_post();
+					while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
 						/*
 						 * Include the post format-specific template for the content. If you want to
@@ -74,5 +80,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar('authors');
+get_sidebar();
 get_footer();
