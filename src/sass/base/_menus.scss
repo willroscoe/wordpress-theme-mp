@@ -231,20 +231,23 @@
 }
 
 .post-navigation {
-  border-top: 2px solid $dark-gray;
-  border-bottom: 2px solid $dark-gray;
+  //border-top: 2px solid $gray-line;
+  //border-bottom: 2px solid $gray-line;
   clear: both;
   font-family: $font-family;
   margin: 0 7.6923% 3.5em;
   a {
-    color: $black;
+    //color: $black;
     display: block;
-    padding: 1.75em 0;
+    //padding: 1.75em 0;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   span {
     display: block;
   }
-  .meta-nav {
+  /*.meta-nav {
     color: $gray2;
     font-size: 13px;
     font-size: 0.8125rem;
@@ -266,11 +269,54 @@
     &:hover .post-title, &:focus .post-title {
       color: $blue1;
     }
+  }*/
+  
+  .nav-links {
+    overflow: hidden;
+    padding: 40px 0px 0px;
+
+    .nav-prev {
+      float: left;
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 20px; /* for when both titles are very long */
+    }
+    .nav-next {
+      float: right;
+      position: relative;
+      padding-right: 20px;
+      margin-bottom: 20px; /* for when both titles are very long */
+      text-align: right;
+    }
+    
+    .nav-prev:before,
+    .nav-next:before {
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      display: inline-block;
+      text-decoration: inherit;
+      font-size: 120%;
+      color: #aaa;
+      margin-top: 1px;
+      text-decoration: none;
+      position: absolute;
+    }
+    
+    .nav-prev:before {
+      content: "\e801";
+      left: 0px;
+    }
+    .nav-next:before {
+      content: "\e800";
+      right: 0px;
+    }
   }
-  div + div {
-    border-top: 4px solid $black;
-  }
+  
+
 }
+
+
 
 .pagination {
   border-top: 4px solid $black;

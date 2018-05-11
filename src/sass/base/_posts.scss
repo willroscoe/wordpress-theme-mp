@@ -186,6 +186,7 @@ a.post-thumbnail {
   hyphens: auto;
 }
 
+
 body:not(.search-results) {
   .entry-summary {
     color: $black;
@@ -500,6 +501,7 @@ ul.display-posts-listing {
 
 .site-main article {
   margin: 20px 0 20px;
+  width: 100%;
   display: inline-block;
   position: relative;
   padding-bottom: 40px;

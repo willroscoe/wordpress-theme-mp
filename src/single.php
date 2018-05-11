@@ -30,12 +30,19 @@ get_header(); ?>
 				) );
 			} elseif ( is_singular( 'post' ) ) {
 				// Previous/next post navigation.
-				the_post_navigation( array(
+				/*the_post_navigation( array(
 					'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'matteringpress' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Next post:', 'matteringpress' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
 					'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'matteringpress' ) . '</span> ' .
 						'<span class="screen-reader-text">' . __( 'Previous post:', 'matteringpress' ) . '</span> ' .
+						'<span class="post-title">%title</span>',
+				) );*/
+
+				the_post_navigation( array(
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next post:', 'matteringpress' ) . '</span> ' .
+						'<span class="post-title">%title</span>',
+					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous post:', 'matteringpress' ) . '</span> ' .
 						'<span class="post-title">%title</span>',
 				) );
 			}

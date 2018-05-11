@@ -130,7 +130,6 @@
             width: 200px;
         }
     }
-    
 }
 
 .widget-book {
@@ -169,6 +168,16 @@
     }
     .post-thumbnail {
         margin: 10px 0 1em;
+    }
+}
+
+.widget_search-book {
+    input.search-book-input {
+        width: 60%;
+    }
+    .search-book-submit {
+        width: 30%;
+        min-width: 80px;
     }
 }
 
