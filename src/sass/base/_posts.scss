@@ -500,7 +500,7 @@ ul.display-posts-listing {
   }*/
 
 .site-main article {
-  margin: 20px 0 20px;
+  margin: 20px 0 10px;
   width: 100%;
   display: inline-block;
   position: relative;
@@ -523,7 +523,8 @@ ul.display-posts-listing {
 
   &:only-child {
     &::after {
-      display: none;
+      //display: none;
+      width: 100%;
     }
     margin-bottom: 0;
     padding-bottom: 0;
@@ -539,7 +540,8 @@ ul.display-posts-listing {
 
 body.single article {
   &::after {
-    display: none;
+    //display: none;
+    width: 100%;
   }
 }
 

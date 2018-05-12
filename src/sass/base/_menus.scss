@@ -273,9 +273,9 @@
   
   .nav-links {
     overflow: hidden;
-    padding: 40px 0px 0px;
+    padding: 0;
 
-    .nav-prev {
+    .nav-previous {
       float: left;
       position: relative;
       padding-left: 20px;
@@ -289,7 +289,7 @@
       text-align: right;
     }
     
-    .nav-prev:before,
+    .nav-previous:before,
     .nav-next:before {
       font-family: FontAwesome;
       font-weight: normal;
@@ -303,20 +303,18 @@
       position: absolute;
     }
     
-    .nav-prev:before {
+    .nav-previous:before {
       content: "\e801";
       left: 0px;
+      top: -2px;
     }
     .nav-next:before {
       content: "\e800";
       right: 0px;
+      top: -2px;
     }
   }
-  
-
 }
-
-
 
 .pagination {
   border-top: 4px solid $black;
