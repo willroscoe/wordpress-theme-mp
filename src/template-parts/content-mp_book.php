@@ -7,7 +7,7 @@
  * @since Mattering Press 1.0
  */
 
-$check_can_read_online = do_action( 'mp_book_check_can_read_online' );//get_epub_file_url();
+$check_can_read_online = apply_filters( 'mp_book_check_can_read_online', FALSE );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
