@@ -411,8 +411,6 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
-
-
 function matteringpress_entry_meta() {
 	if ( 'post' === get_post_type() ) {
 		$author_avatar_size = apply_filters( 'matteringpress_author_avatar_size', 49 );

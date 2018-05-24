@@ -7,15 +7,13 @@
  * @since Mattering Press 1.0
  */
 
-$epub_file_url = get_epub_file_url();
+$check_can_read_online = do_action( 'mp_book_check_can_read_online' );//get_epub_file_url();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="book-title book-page">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-	<!--<h3 class="book-subtitle"><?php //echo get_book_subtitle(); ?></h3>
-	<h4 class="book-authors"><?php //echo get_book_authors(); ?></h4>-->
 
 	<div class="entry-content">
 		<?php
@@ -30,7 +28,7 @@ $epub_file_url = get_epub_file_url();
 			'separator'   => '<span class="screen-reader-text">, </span>',
 		) );
 		?>
-		<?php if ($epub_file_url != "") { ?>
+		<?php if ($check_can_read_online == TRUE) { ?>
 		<p style="text-align: right;"><a href="<?php echo esc_url( get_permalink() ) . "/read"; ?>" class="button button-blue" style="color:white; text-decoration:none;">Read online »</a></p>
 		<?php } ?>
 	</div><!-- .entry-content -->	
