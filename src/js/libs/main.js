@@ -89,7 +89,7 @@
       displayVals(selector);
     };
   
-    var downloadTracking = function() {
+    /*var downloadTracking = function() {
         var filetypes = /\.(pdf|mobi|epub)$/i;
         var baseHref = '';
         if ($('base').attr('href') != undefined) {
@@ -102,7 +102,6 @@
               var extension = (/[.]/.exec(href)) ? /[^.]+$/.exec(href) : undefined;
               var filePath = href;
               ga('send','event','Download','Click-'+extension,{'page': filePath}, {'nonInteraction': 1});
-              //_paq.push(['trackEvent', 'Download Book', filePath]);
               if ($(this).attr('target') != undefined && $(this).attr('target').toLowerCase() != '_blank') {
                 setTimeout(function() {
                   location.href = baseHref + href;
@@ -112,9 +111,9 @@
             });
           }
         });
-    };
+    };*/
   
     colorbox('.colorbox');
     donations('#donate-popup');
-    downloadTracking();
+    //downloadTracking();
   })(jQuery);

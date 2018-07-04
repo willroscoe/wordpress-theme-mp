@@ -24,7 +24,12 @@
 					<li><a href='https://www.facebook.com/MatteringPress' id='facebook'>Facebook</a></li>
 				</ul>
 			</div>
-			
+			<div class='footer-pagelinks'>
+				<ul>
+					<li><a href="/privacy-policy">Privacy policy</a></li>
+					<li><a href="/cookie-policy">Cookie policy</a></li>
+				</ul>
+			</div>
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
