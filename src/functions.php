@@ -498,3 +498,30 @@ function matteringpress_entry_taxonomies() {
 	}
 }
 
+add_action( 'woocommerce_check_cart_items', 'mp_woo_set_max_num_products_in_order' );
+function mp_woo_set_max_num_products_in_order() {
+	// Only run in the Cart or Checkout pages
+	if( is_cart() || is_checkout() ) {
+		global $woocommerce;
+
+		// Set the minimum number of products before checking out
+		$max_num_products_in_order = 8;
+		// Get the Cart's total number of products
+		$cart_num_products = WC()->cart->cart_contents_count;
+
+		// Compare values and add an error is Cart's total number of products
+	    // happens to be more than the max allowed before checking out.
+		// Will display a message along the lines of
+		// A Max of6 products is required before checking out. (Cont. below)
+		// Current number of items in the cart: 6	
+		if( $cart_num_products > $max_num_products_in_order ) {
+			// Display our error message
+	        wc_add_notice( sprintf( '<strong>Sorry. You are allowed a maximum of %s items per online order. For orders of more than %s books, please email sales@matteringpress.org for a quotation.</strong>' 
+	        	. '<br />Current number of items in the cart: %s.',
+				$max_num_products_in_order,
+				$max_num_products_in_order,
+	        	$cart_num_products ),
+	        'error' );
+		}
+	}
+}

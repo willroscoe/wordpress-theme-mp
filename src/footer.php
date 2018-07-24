@@ -27,7 +27,7 @@
 			<div class='footer-pagelinks'>
 				<ul>
 					<li><a href="/privacy-policy">Privacy policy</a></li>
-					<li><a href="/cookie-policy">Cookie policy</a></li>
+					<li><a href="/terms-and-conditions">Terms and Conditions</a></li>
 				</ul>
 			</div>
 		</footer><!-- .site-footer -->
