@@ -41,11 +41,34 @@
         margin: 30px 0px 30px 10px;
         list-style-type: none;
         font-size: 80%;
+
+        li {
+            padding: 0px;
+            margin: 2px 0px;
+
+            .label {
+                color: $dark-gray;
+            }
+
+            .links a {
+                text-decoration: none;
+                background-image: none;
+                padding: 0px;
+            }
+            
+            &.li_separator {
+                height: 0.5em;
+            }
+        }
     }
 
-    ul.link-block li {
+    /*ul.link-block li {
         padding: 0px;
         margin: 2px 0px;
+
+        .li_separator {
+            height: 0.5em;
+        }
     }
 
     ul.link-block li .label {
@@ -56,7 +79,7 @@
         text-decoration: none;
         background-image: none;
         padding: 0px;
-    }
+    }*/
 }
 
 .book-title {
@@ -102,6 +125,10 @@
     ul.link-block li {
         padding: 0px;
         margin: 2px 0px;
+
+        &.li_separator {
+            height: 0.5em;
+        }
     }
 
     ul.link-block li .label {
@@ -323,4 +350,10 @@
     background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee)) !important;
     background: -moz-linear-gradient(top,  #0078a5,  #00adee) !important;
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee') !important;
+  }
+
+  .epub {
+      h2.book, h2.toc-title, h2.chapter, h2.part {
+        margin-top: 1em !important;
+      }
   }

@@ -10,12 +10,9 @@
 
 <aside id="book-sidebar" class="sidebar widget-area book-sidebar" role="complementary">
 	<section id="subpages-widget-2" class="widget widget_subpages">
-		<!--<h2 class="widget-title">
-			<?php //the_title(); ?>
-		</h2>-->
-	
-		<?php matteringpress_post_thumbnail(); ?>
 
+		<?php matteringpress_post_thumbnail(); ?>
+		<h2><?php the_title(); ?></h2>
 		<?php do_action( 'mp_books_get_book_meta_info' ); ?>
 		
 		<?php do_action('mp_books_get_book_links'); ?>
